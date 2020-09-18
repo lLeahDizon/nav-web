@@ -1,0 +1,106 @@
+/* css reset */
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+
+/* style */
+body {
+  background: #eeeeee;
+}
+
+.globalHeader {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.globalHeader > input {
+  width: 100%;
+  margin-right: 10px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+.globalHeader > button {
+  white-space: nowrap;
+  padding: 0 28px;
+  border: none;
+  border-radius: 4px;
+  background: #0282b9;
+  color: white;
+  font-size: 16px;
+}
+
+.globalMain {
+}
+
+.siteList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  justify-content: space-between;
+}
+.siteList > li {
+  margin-bottom: 10px;
+}
+.siteList .site {
+  width: 160px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  padding: 20px 0;
+}
+.siteList .site > .logo {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
+}
+.siteList .site > .link {
+  font-size: 14px;
+  margin-top: 4px;
+}
+.siteList .addButton {
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  width: 160px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.siteList .addButton .icon {
+  width: 56px;
+  height: 56px;
+}
+.siteList .addButton .text {
+  font-size: 14px;
+  margin-top: 4px;
+}
+.siteList .addButton .icon-wrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
