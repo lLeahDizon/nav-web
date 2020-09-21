@@ -4,12 +4,19 @@ const x = localStorage.getItem("x");
 const xObject = JSON.parse(x);
 const hashMap = xObject || [
   {
-    logo: "images/bilibili.png",
-    logoType: "image",
+    logo: "B",
     url: "https://m.bilibili.com/",
   },
-  { logo: "G", logoType: "text", url: "https://github.com/" },
+  { logo: "G", url: "https://github.com/" },
 ];
+
+const simplifyUrl = (url) => {
+  return url
+    .replace("https://", "")
+    .replace("http://", "")
+    .replace("www.", "")
+    .replace(/\/.*/, ""); // 删除 / 开头的内容
+};
 
 const render = () => {
   $siteList.find("li:not(.last)").remove();
@@ -18,7 +25,7 @@ const render = () => {
         <a href="${node.url}">
             <div class="site">
               <dig class="logo">${node.logo[0]}</dig>
-              <div class="link">${node.url}</div>
+              <div class="link">${simplifyUrl(node.url)}</div>
             </div>
         </a>
   </li>`).insertBefore($lastLi);
@@ -32,7 +39,7 @@ $(".addButton").on("click", () => {
   if (url.indexOf("http") !== 0) {
     url = "http://" + url;
   }
-  hashMap.push({ logo: url[0], logoType: "text", url: url });
+  hashMap.push({ logo: simplifyUrl(url)[0], url: url });
   render();
 });
 
