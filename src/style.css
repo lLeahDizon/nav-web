@@ -27,13 +27,24 @@ img {
 body {
   background: #eeeeee;
 }
-
 .globalHeader {
   margin: 20px;
+}
+@media (min-width: 500px) {
+  .globalHeader {
+    margin: 60px 0 100px;
+  }
 }
 .searchForm {
   display: flex;
   justify-content: space-between;
+}
+@media (min-width: 500px) {
+  .searchForm {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+  }
 }
 .searchForm > input {
   width: 100%;
@@ -54,6 +65,9 @@ body {
 }
 
 .globalMain {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .siteList {
@@ -62,8 +76,20 @@ body {
   margin: 20px;
   justify-content: space-between;
 }
+@media (min-width: 500px) {
+  .siteList {
+    margin-right: -25px;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+}
 .siteList > li {
   margin-bottom: 10px;
+}
+@media (min-width: 500px) {
+  .siteList > li {
+    margin-right: 25px;
+  }
 }
 .siteList .site {
   width: 160px;
@@ -76,6 +102,7 @@ body {
   border-radius: 4px;
   padding: 20px 0;
   position: relative;
+  cursor: pointer;
 }
 .siteList .site > .logo {
   width: 64px;
@@ -94,6 +121,15 @@ body {
   position: absolute;
   right: 10px;
   top: 5px;
+  cursor: default;
+}
+@media (min-width: 500px) {
+  .siteList .site > .close {
+    display: none;
+  }
+  .siteList .site:hover > .close {
+    display: block;
+  }
 }
 .siteList .addButton {
   border: 1px solid #dddddd;
